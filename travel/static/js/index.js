@@ -1,0 +1,1 @@
+$(document).ready(function(){$(window).scroll(function(){var e=$("header");100<=$(window).scrollTop()?e.addClass("sticky"):e.removeClass("sticky")}),$("#callSideBar").change(function(e){$(this).prop("checked")?($("header ul").addClass("active"),$("header").removeClass("sticky")):($("header ul").removeClass("active"),$("header").ad("sticky"))})});
