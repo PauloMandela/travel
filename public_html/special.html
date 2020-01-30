@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="static/css/index.css"><script>document.documentElement.className = "js";
+        var supportsCssVars = function () {
+            var e,
+                t = document.createElement("style");
+            return (
+                (t.innerHTML = "root: { --tmp-var: bold; }"),
+                document.head.appendChild(t),
+                (e = !!(
+                    window.CSS &&
+                    window.CSS.supports &&
+                    window.CSS.supports("font-weight", "var(--tmp-var)")
+                )),
+                t.parentNode.removeChild(t),
+                e
+            );
+        };
+        supportsCssVars() ||
+            alert(
+                "Hakyky web-sahypany häzirkizaman browserlerinde görmegiňizi haýyş edýäris."
+            );</script><style>body {
+            overflow: hidden;
+        }
+        #headerBnd {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 75px;
+            z-index: 10;
+        }
+
+        #headerBnd.sticky {
+            background-color: #131319;
+        }</style></head><body class="loading cda-noimg"><div id="headerBnd"></div><main><div class="content" id="travelGallery"><!-- the content --></div></main><div class="cursor"><div class="cursor__inner cursor__inner--circle"></div><div class="cursor__inner cursor__inner--dot"></div></div><script src="static/js/image.js"></script><script src="static/js/jquery.js"></script><script>$(document).ready(function () {
+            $('.slide-more').click(function (e) {
+                e.preventDefault();
+                console.log('hello');
+            })
+        });</script></body></html>

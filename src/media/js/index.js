@@ -12,8 +12,7 @@ $(document).ready(function () {
             $('header').removeClass('sticky')
         } else {
             $('header ul').removeClass('active');
-            $('header').ad('sticky')
-
+            $('header').addClass('sticky')
         }
     })
 });

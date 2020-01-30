@@ -1,28 +1,225 @@
 body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
+  margin: 0;
+  padding: 0;
 }
-.main-content {
-    color: red;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
-.page {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    margin: 0;
-    padding: 15px;
+::-webkit-scrollbar {
+  width: 0px; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+  display: none;
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 
-body > div:first-child {
-    background-color: lightcyan;
+#app {
+  header {
+    position: fixed;
+    height: 75px;
+    width: 100vw;
+    z-index: 1000;
+    padding: 15px 10vw;
+    display: flex;
+    background: transparent;
+    transition: all 0.6s;
+    @media only screen and (max-width: 768px) {
+      padding: 15px 80px 15px 25px !important;
+    }
+    @media only screen and (max-width: 992px) {
+      padding: 15px;
+    }
+    &.sticky {
+      background-color: black;
+    }
+    .call-phone,
+    #logo {
+      color: #fff;
+      font-weight: bold;
+    }
+    .call-phone {
+      i {
+        display: none;
+        @media only screen and (max-width: 992px) {
+          display: unset !important;
+        }
+      }
+      span {
+        @media only screen and (max-width: 992px) {
+          display: none !important;
+        }
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      ul {
+        list-style: none;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+
+        @media only screen and (max-width: 768px) {
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, 0.938);
+          padding: 15vh 15vw;
+          display: none;
+          &.active {
+            display: block !important;
+          }
+          li {
+            font-size: 2rem;
+            display: block !important;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 1% !important;
+            transition: all 0.6s;
+            padding: 0 !important;
+
+            &:hover {
+              color: #ff0000;
+              cursor: pointer;
+            }
+          }
+        }
+        li {
+          display: inline;
+          padding: 10px 5px;
+          margin-right: 15px;
+          border-bottom: 3px solid transparent;
+          a {
+            text-decoration: none;
+          }
+        }
+        li.active {
+          border-bottom-color: #ff0000;
+        }
+        li:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+  #page-wrapper {
+    .page {
+      min-height: 100vh;
+    }
+    iframe {
+      min-height: 100vh;
+    }
+    .page:not(:first-child) {
+      padding: 50px 10vw;
+      @media only screen and (max-width: 768px) {
+        padding: 50px 15px !important;
+      }
+    }
+    .header-row {
+      border-left: 3px solid red;
+      margin-bottom: 30px;
+      padding-left: 15px;
+      .display-4 {
+        font-size: 2rem;
+      }
+    }
+    .card-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      .info-card {
+        &.active {
+          background: #ff0000;
+          border: 1px solid darkred;
+
+          color: #fff;
+        }
+        &:hover {
+          box-shadow: 0 0 20px 0 #dedede;
+          transform: translateY(-10px);
+          border-color: #dededede;
+          cursor: pointer;
+        }
+        height: 150px;
+        width: 200px;
+        margin-bottom: 15px;
+        padding: 25px 30px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        transition: all 0.3s;
+      }
+    }
+    .dflex {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+    .dflex > div {
+      max-width: 40%;
+    }
+    .btn-group {
+      min-width: 200px;
+      padding-left: 15px;
+      a,
+      button {
+        background-color: red;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 12px;
+        height: 30px;
+      }
+      a {
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+      button {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
 }
-body > div:last-child {
-    background-color: lightpink;
+.tour-gallery {
+  .tour-wrapper {
+    .tour {
+      height: 350px;
+      min-width: 500px;
+      background-color: salmon;
+      border-radius: 3px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0 15px;
+      position: relative;
+      .tour-desc {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        width: 250px;
+        background-color: slateblue;
+        color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        p {
+          font-size: 12px;
+        }
+        a {
+          color: red;
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

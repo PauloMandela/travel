@@ -1,1 +1,0 @@
-function fun(n){return.1+.2}console.log(fun());

@@ -14,13 +14,13 @@ const minify = require('gulp-uglify')
 function imgmin() {
     return src('src/media/img/*.*')
         .pipe(imagemin())
-        .pipe(dest('hhgm/static/img'))
+        .pipe(dest('public_html/static/img'))
 }
 
 function compress() {
     return src(['src/media/js/*.js'])
         .pipe(minify())
-        .pipe(dest('hhgm/static/js'))
+        .pipe(dest('public_html/static/js'))
 }
 
 function html() {
@@ -31,7 +31,7 @@ function html() {
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
-        .pipe(dest('hhgm/templates'))
+        .pipe(dest('public_html'))
 }
 
 function scss() {
@@ -43,26 +43,26 @@ function scss() {
         .pipe(autoprefixer({}))
         .pipe(csso())
         .pipe(concat('index.css'))
-        .pipe(dest('hhgm/static/css'))
+        .pipe(dest('public_html/static/css'))
 }
 
 function justcss() {
     return src('src/media/*.css')
-        .pipe(dest('hhgm/static/css'))
+        .pipe(dest('public_html/static/css'))
 }
 
 function fonts() {
     return src('src/media/fonts/*.*')
-        .pipe(dest('hhgm/static/fonts'))
+        .pipe(dest('public_html/static/fonts'))
 }
 
 function clear() {
-    return del('hhgm')
+    return del('public_html')
 }
 
 function serve() {
     sync.init({
-        server: './hhgm',
+        server: './public_html',
     })
 
     watch('src/*/**.html', series(html)).on('change', sync.reload)
