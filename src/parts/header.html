@@ -7,7 +7,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mary Travel</title>
     <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e7f32ef2-c496-40fc-b6fd-dad0ff21802b&lang=ru_RU" type="text/javascript">
+    </script>
 </head>
 
 <body>
-    
+    <header id="header">
+        <nav>
+            <a href="#" id="logo"><img src="static/img/logo.png" alt=""></a>
+            <ul>
+                <li class="active"> <a href="#">Home</a> </li>
+                <li> <a href="#">About us</a> </li>
+                <li> <a href="#general-info">Tours</a> </li>
+                <li> <a href="#">Services</a> </li>
+                <li> <a href="#">Contacts</a> </li>
+                <li> <a href="#">Gallery</a> </li>
+            </ul>
+            <a href="#" class="call-phone"><span>ENG / DEU</span><i class="icon">phone</i></a>
+        </nav>
+        <div class="hamburger">
+            <label for="callSideBar">
+                <input type="checkbox" id="callSideBar">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="30"></circle>
+                    <path class="line--1 line--debug" d="M0 40h62c13 0 6 28-4 18L35 35"></path>
+                    <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35"></path>
+                    <path class="line--2 line--debug" d="M0 50h70"></path>
+                    <path class="line--2" d="M0 50h70"></path>
+                    <path class="line--3 line--debug" d="M0 60h62c13 0 6-28-4-18L35 65"></path>
+                    <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65"></path>
+                </svg>
+            </label>
+        </div>
+    </header>

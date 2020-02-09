@@ -71,6 +71,8 @@ function serve() {
     watch('src/media/**.css', series(justcss)).on('change', sync.reload)
     watch('src/sass/**.scss', series(scss)).on('change', sync.reload)
 }
+
 exports.build = series(clear, scss, fonts, justcss, compress, html)
 exports.clear = clear
 exports.serve = series(clear, imgmin, fonts, scss, justcss, compress, html, serve)
+exports.custom = series(imgmin)
